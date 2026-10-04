@@ -85,20 +85,25 @@
         const inject = () => {
           const card = document.querySelector('section#top .card');
           if (!card || card.querySelector('img[data-profile-photo]')) return false;
-          const img = document.createElement('img');
-          img.src = photoSrc;
-          img.alt = photoAlt;
-          img.loading = 'lazy';
-          img.decoding = 'async';
-          img.dataset.profilePhoto = 'true';
-          img.className = 'profile-photo-fallback';
-          img.style.display = 'block';
-          img.style.marginBottom = '1rem';
-          const first = card.firstElementChild;
-          if (first) card.insertBefore(img, first);
-          else card.appendChild(img);
           document.querySelectorAll('span.grid.h-9.w-9.place-items-center.rounded-lg.bg-brand-600.text-sm.font-extrabold.text-white').forEach((el) => {
-            el.remove();
+            const img = document.createElement('img');
+            img.src = photoSrc;
+            img.alt = photoAlt;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.dataset.profilePhoto = 'true';
+            img.className = 'profile-photo-fallback';
+            img.style.display = 'block';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.marginBottom = '0';
+            img.style.maxWidth = '100%';
+            img.style.borderRadius = '0.75rem';
+            img.style.objectFit = 'cover';
+            el.replaceChildren(img);
+            el.style.overflow = 'hidden';
+            el.style.padding = '0';
+            el.style.background = 'transparent';
           });
           return true;
         };
