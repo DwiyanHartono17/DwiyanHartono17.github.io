@@ -17,8 +17,8 @@ export const profile = {
   summary:
     "Hello, I'm Dwiyan, a Fullstack Software Developer working in the Information Technology consulting and software house sector. I have more than 5 years of experience in the software development field, building web platforms, backend services, and mobile applications.",
   email: 'm.dwiyan.hartono@gmail.com',
-  website: 'www.dwiyanhartono.com',
-  websiteUrl: 'https://www.dwiyanhartono.com',
+  website: 'DwiyanHartono17.github.io',
+  websiteUrl: 'https://dwiyanhartono17.github.io',
   cvUrl: '/cv.pdf',
   location: 'Bekasi, West Java, Indonesia',
 }

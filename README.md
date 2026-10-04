@@ -65,7 +65,6 @@ npm run preview
 ├── index.html                  # HTML shell + SEO/OG meta + JSON-LD
 ├── public/
 │   ├── 404.html                # GitHub Pages SPA fallback
-│   ├── CNAME                   # custom domain (www.dwiyanhartono.com)
 │   ├── cv.pdf                  # placeholder CV (replace with real file)
 │   ├── favicon.svg
 │   ├── og-image.svg
@@ -90,13 +89,16 @@ skills, tech stack groups, timeline, and projects. Update that file to change co
 
 ## Deployment (GitHub Pages)
 
-1. Push the repository to GitHub.
+1. Push the repository to GitHub as the user-site repo
+   (`DwiyanHartono17/DwiyanHartono17.github.io`).
 2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 3. Push to the `main` branch (or run the workflow manually). The
    `.github/workflows/deploy.yml` workflow builds and deploys `dist/`.
-4. The `public/CNAME` file maps the site to `www.dwiyanhartono.com`.
+4. The site is served at the root user-site URL:
+   <https://DwiyanHartono17.github.io/>.
 
-If you host on `username.github.io/repo` **without** a custom domain, set
+Because this is a user site, `base` stays `'/'` in `vite.config.ts`. If you
+ever host it as a project page (`username.github.io/repo`), set
 `base: '/<repo-name>/'` in `vite.config.ts`.
 
 ## Notes / placeholders
