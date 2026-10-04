@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="M. Dwiyan Hartono — Senior Fullstack Software Developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220" />
+      <stop offset="1" stop-color="#131c33" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3366ff" />
+      <stop offset="1" stop-color="#1735e1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="72" y="72" width="96" height="96" rx="22" fill="url(#accent)" />
+  <text x="120" y="137" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" text-anchor="middle">MD</text>
+  <text x="72" y="320" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">M. Dwiyan Hartono</text>
+  <text x="72" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="600" fill="#8eb4ff">Senior Fullstack Software Developer</text>
+  <text x="72" y="470" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="400" fill="#c7d2e5">5+ years · Web · Backend · Mobile · REST API</text>
+  <text x="72" y="540" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="500" fill="#7f8da8">www.dwiyanhartono.com</text>
+</svg>
