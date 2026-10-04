@@ -98,17 +98,7 @@
           if (first) card.insertBefore(img, first);
           else card.appendChild(img);
           document.querySelectorAll('span.grid.h-9.w-9.place-items-center.rounded-lg.bg-brand-600.text-sm.font-extrabold.text-white').forEach((el) => {
-            const clone = img.cloneNode(true);
-            clone.style.marginBottom = '0';
-            clone.style.width = '100%';
-            clone.style.maxWidth = '100%';
-            clone.style.height = '100%';
-            clone.style.borderRadius = '0.75rem';
-            clone.style.objectFit = 'cover';
-            el.replaceChildren(clone);
-            el.style.overflow = 'hidden';
-            el.style.padding = '0';
-            el.style.background = 'transparent';
+            el.remove();
           });
           return true;
         };
