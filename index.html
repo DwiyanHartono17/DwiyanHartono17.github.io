@@ -47,6 +47,53 @@
     <meta name="twitter:image" content="https://dwiyanhartono17.github.io/og-image.svg" />
 
     <script src="/theme-init.js"></script>
+
+    <style>
+      .profile-photo-fallback {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: cover;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+      }
+    </style>
+    <script>
+      (() => {
+        const photoSrc = '/profile-photo.png';
+        const photoAlt = 'M. Dwiyan Hartono';
+        const inject = () => {
+          const card = document.querySelector('section#top .card');
+          if (!card || card.querySelector('img[data-profile-photo]')) return false;
+          const img = document.createElement('img');
+          img.src = photoSrc;
+          img.alt = photoAlt;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          img.dataset.profilePhoto = 'true';
+          img.className = 'profile-photo-fallback';
+          img.style.display = 'block';
+          img.style.marginBottom = '1rem';
+          const first = card.firstElementChild;
+          if (first) card.insertBefore(img, first);
+          else card.appendChild(img);
+          return true;
+        };
+        const ready = () => {
+          if (inject()) return;
+          const observer = new MutationObserver(() => {
+            if (inject()) observer.disconnect();
+          });
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+          setTimeout(() => observer.disconnect(), 10000);
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', ready, { once: true });
+        } else {
+          ready();
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
