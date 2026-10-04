@@ -48,6 +48,26 @@
 
     <script src="/theme-init.js"></script>
 
+    <script>
+      (() => {
+        const markExperience = () => {
+          document.querySelectorAll('dd, p, span').forEach((el) => {
+            if (el.textContent && el.textContent.includes('5+ years')) {
+              el.textContent = el.textContent.replaceAll('5+ years', '9+ years')
+            }
+            if (el.textContent && el.textContent.includes('more than 5 years')) {
+              el.textContent = el.textContent.replaceAll('more than 5 years', 'more than 9 years')
+            }
+          })
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', markExperience, { once: true });
+        } else {
+          markExperience();
+        }
+      })();
+    </script>
+
     <style>
       .profile-photo-fallback {
         width: 100%;
